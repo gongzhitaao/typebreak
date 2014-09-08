@@ -8,7 +8,7 @@ stop for 10 minutes, *if you would like to*.  Otherwise it could be
 dismissed with <kbd>ALT</kbd> + <kbd>F4</kbd>.  It's all up to you.
 
 *This program doesn't invoke itself*.  Instead, I use `cron` to run it
- every 50 minutes.
+ every hour.
 
 The crontab line command is
 
