@@ -1,16 +1,17 @@
 #include "widget.h"
 #include "ui_widget.h"
 
-Widget::Widget(QWidget *parent) :
+Widget::Widget(int duration, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Widget)
+    ui(new Ui::Widget),
+    duration_(duration)
 {
     ui->setupUi(this);
 
-    countdown = QTime(0, 10, 0);
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
-    timer->start(1000);
+    countdown_ = QTime(0, duration_, 0);
+    timer_ = new QTimer(this);
+    connect(timer_, SIGNAL(timeout()), this, SLOT(showTime()));
+    timer_->start(1000);
 
     showTime();
 
@@ -25,14 +26,14 @@ Widget::~Widget()
 
 void Widget::showTime()
 {
-    countdown = countdown.addSecs(-1);
-    QString text = countdown.toString("mm:ss");
-    if ((countdown.second() % 2) == 0)
+    countdown_ = countdown_.addSecs(-1);
+    QString text = countdown_.toString("mm:ss");
+    if ((countdown_.second() % 2) == 0)
         text[2] = ' ';
     ui->lcdNumber->display(text);
 
-    if (QTime(0, 0) == countdown) {
-        timer->stop();
+    if (QTime(0, 0) == countdown_) {
+        timer_->stop();
         close();
     }
 }

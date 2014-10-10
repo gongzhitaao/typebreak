@@ -14,7 +14,7 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = 0);
+    explicit Widget(int duration, QWidget *parent = 0);
     ~Widget();
 
 private slots:
@@ -23,8 +23,10 @@ private slots:
 private:
     Ui::Widget *ui;
 
-    QTime countdown;
-    QTimer *timer;
+    QTime countdown_;
+    QTimer *timer_;
+
+    int duration_;
 };
 
 #endif // WIDGET_H
