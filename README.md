@@ -9,6 +9,8 @@ implemented.  It's just a window with a countdown timer.  It only tells you that
 you've got to stop for a while, *if you would like to*.  Otherwise it could be
 dismissed with <kbd>ALT</kbd> + <kbd>F4</kbd>.  It's all up to you.
 
+![demo](demo.png)
+
 ## How to Use
 
 *This program does not invoke itself*.  I use `cron` to run it every half an
