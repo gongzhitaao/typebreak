@@ -14,7 +14,7 @@ class Widget : public QWidget
     Q_OBJECT
 
 public:
-    explicit Widget(int duration, QWidget *parent = 0);
+    explicit Widget(int duration, QWidget *parent = nullptr);
     ~Widget();
 
 private slots:

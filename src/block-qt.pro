@@ -4,13 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui widgets
 
 TARGET = block-qt
 TEMPLATE = app
-
 
 SOURCES += main.cpp\
         widget.cpp
